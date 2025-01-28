@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "348c91d7-cd2c-47d1-8a25-4bd57ff75228",
+		"name": "KafkaBullMQPoC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38557442"
+	},
+	"item": [
+		{
+			"name": "HighPriority",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"HighPriority\",\n    \"data\": {\n        \"email\": \"user@example.com\",\n        \"subject\": \"Welcome!\",\n        \"message\": \"HelloWorld!\"\n    },\n    \"attempts\": 5,\n    \"delay\": 0,\n    \"priority\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MediumPriority",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"MediumPriority\",\n    \"data\": {\n        \"email\": \"user@example.com\",\n        \"subject\": \"Welcome!\",\n        \"message\": \"HelloWorld!\"\n    },\n    \"attempts\": 5,\n    \"delay\": 0,\n    \"priority\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LowPriority",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"LowPriority\",\n    \"data\": {\n        \"email\": \"user@example.com\",\n        \"subject\": \"Welcome!\",\n        \"message\": \"HelloWorld!\"\n    },\n    \"attempts\": 5,\n    \"delay\": 0,\n    \"priority\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SimulateMultiple",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/tasks/multiple",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"multiple"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SimulateFailure",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"SimulateFailure\",\n    \"data\": {\n        \"email\": \"user@example.com\",\n        \"subject\": \"Welcome!\",\n        \"message\": \"HelloWorld!\"\n    },\n    \"attempts\": 5,\n    \"delay\": 0,\n    \"priority\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
