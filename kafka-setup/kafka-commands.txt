@@ -1,0 +1,21 @@
+
+# Start Kafka and Zookeeper
+docker-compose up -d
+
+# Create a Kafka Topic
+docker exec -it kafka kafka-topics --create --topic test-topic --bootstrap-server localhost:9092
+
+# List Kafka Topic
+docker exec -it kafka kafka-topics --list --bootstrap-server localhost:9092
+
+# Produce to Kafka Topic
+while true; do docker exec -it kafka bash -c "echo 'From Kafka producer' | kafka-console-producer --topic test-topic --bootstrap-server localhost:9092"; sleep 2; done
+
+# Consume from Kafka Topic
+docker exec -it kafka kafka-console-consumer --topic test-topic --bootstrap-server localhost:9092 --from-beginning
+
+# Delete Kafka Topic
+docker exec -it kafka kafka-topics --delete --topic test-topic --bootstrap-server localhost:9092
+
+# Check if Topic is Deleted
+docker exec -it kafka kafka-topics --list --bootstrap-server localhost:9092 
